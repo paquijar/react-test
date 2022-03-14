@@ -1,11 +1,16 @@
-import React from 'react';
+import Category from "../Category/Category";
+import styles from "./styles.module.css";
+import { useState } from "react";
 
-const Ballot = () => {
+const Ballot = ({ items }) => {
+  const [selectedItems, setSelectedItems] = useState([]);
   return (
-    <div className='ballot'>
-      'Your Code Goes Here'
-    </div>
-  )
-}
+    <ul className={styles.list}>
+      {items.map((item) => (
+        <Category key={item.id} category={item} />
+      ))}
+    </ul>
+  );
+};
 
 export default Ballot;

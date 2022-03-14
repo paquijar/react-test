@@ -1,16 +1,25 @@
-import './App.css';
-import Ballot from './Components/Ballot/Ballot';
+import Ballot from "./Components/Ballot/Ballot";
+import React, { useEffect, useState } from "react";
+import api from "./Api/Api";
+import styles from "./styles.module.css";
 
 function App() {
-  // Feel free to remove the contents of the header tag to make more room for your code
+  const [ballotData, setBallotData] = useState([]);
+  useEffect(() => {
+    const getBallotData = async () => {
+      const data = await api.getBallotData();
+      setBallotData(data.items);
+    };
+    getBallotData();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+    <div>
+      <header>
+        <h1 className={styles.title}>AWARDS 2021</h1>
       </header>
-      <Ballot />
+      <main>
+        <Ballot items={ballotData} />
+      </main>
     </div>
   );
 }

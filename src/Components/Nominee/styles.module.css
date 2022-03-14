@@ -1,0 +1,36 @@
+.card {
+  background-color: #009b86;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  transition: all 0.3s;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.card:hover {
+  background-color: #34ac9c;
+  color: #cccccc;
+}
+
+.button {
+  background-color: #0d2436;
+  border-radius: 10px;
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background-color: #06111a;
+}

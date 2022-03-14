@@ -1,0 +1,28 @@
+.category {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .category {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .category {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.title {
+  color: #0d2436;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
