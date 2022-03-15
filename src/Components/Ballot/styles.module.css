@@ -4,4 +4,23 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.button {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  color: #0d2436;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.button:hover {
+  background-color: #cccccc;
 }

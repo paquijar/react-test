@@ -1,11 +1,20 @@
 import styles from "./styles.module.css";
 
-const Nominee = ({ nominee }) => {
+const Nominee = ({ nominee, selected, selectItem, categoryId }) => {
   return (
-    <li className={styles.card}>
-      <h3>{nominee.title}</h3>
-      <img src={nominee.photoUrL} alt={nominee.title} />
-      <button className={styles.button}>Select</button>
+    <li className={`${styles.card} ${selected ? styles.selected : ""}`}>
+      <h3 className={styles.title}>{nominee.title}</h3>
+      <div className={styles.imageContainer}>
+        <img src={nominee.photoUrL} alt={nominee.title} />
+      </div>
+      <button
+        className={styles.button}
+        onClick={() =>
+          selectItem(selected ? undefined : nominee.id, categoryId)
+        }
+      >
+        {selected ? "Unselect" : "Select"}
+      </button>
     </li>
   );
 };
