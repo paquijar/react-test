@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
 
 function App() {
   const [ballotData, setBallotData] = useState([]);
+
   useEffect(() => {
     const getBallotData = async () => {
       const data = await api.getBallotData();
@@ -12,6 +13,7 @@ function App() {
     };
     getBallotData();
   }, []);
+
   return (
     <div>
       <header>

@@ -2,7 +2,6 @@ import Nominee from "../Nominee/Nominee";
 import styles from "./styles.module.css";
 
 const Category = ({ category, selectedItem, selectItem }) => {
-  console.log(selectedItem);
   return (
     <li>
       <h2 className={styles.title}>{category.title}</h2>
@@ -11,9 +10,9 @@ const Category = ({ category, selectedItem, selectItem }) => {
           <Nominee
             key={item.id}
             nominee={item}
-            selected={selectedItem === item.id}
+            selected={selectedItem?.id === item.id}
             selectItem={selectItem}
-            categoryId={category.id}
+            category={category}
           />
         ))}
       </ul>
