@@ -5,12 +5,18 @@ import styles from "./styles.module.css";
 
 function App() {
   const [ballotData, setBallotData] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getBallotData = async () => {
-      const data = await api.getBallotData();
-      setBallotData(data.items);
+      try {
+        const data = await api.getBallotData();
+        setBallotData(data.items);
+      } catch (err) {
+        setError("Could not fetch ballot data");
+      }
     };
+
     getBallotData();
   }, []);
 
@@ -20,6 +26,7 @@ function App() {
         <h1 className={styles.title}>AWARDS 2021</h1>
       </header>
       <main>
+        {error && <p className={styles.error}>{error}</p>}
         <Ballot items={ballotData} />
       </main>
     </div>
