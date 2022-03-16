@@ -10,7 +10,7 @@ const Ballot = ({ items }) => {
   const addSelectedItem = (item, category) => {
     setSelectedItems((prevItems) => {
       const newItems = { ...prevItems };
-      if (!item.id) {
+      if (!item?.id) {
         delete newItems[category.id];
       } else {
         newItems[category.id] = { ...item, categoryName: category.title };
